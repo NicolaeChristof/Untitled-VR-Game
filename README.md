@@ -22,6 +22,7 @@ We should observe the following styling conventions to keep a clean, consistent 
 | Type | Convention |
 |--|--|
 | Variable | camelCase |
+| Constant | SNAKE_CASE_ALL_CAPS |
 | Function | PascalCase |
 | Class | PascalCase |
 | Struct | PascalCase |
