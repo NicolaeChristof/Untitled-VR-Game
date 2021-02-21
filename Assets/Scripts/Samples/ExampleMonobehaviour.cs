@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Samples
@@ -9,28 +8,28 @@ namespace Samples
     /// If needed, include a summary of your class here in this nicely formatted XML docstring comment. This should be
     /// used for classes that are complex in nature or major core systems that actually need documentation.
     /// </summary>
-    public class ExampleClass
+    public class ExampleMonobehaviour : MonoBehaviour
     {
+        // serialized fields
+        [SerializeField]
+        private int listCapacity = default;
+        
         // properties
         public int NumberOfWords => words.Count;
         
         // member variables
-        private readonly List<string> words;
+        private List<string> words;
         
-        // constructors
-        public ExampleClass()
+        // unity functions
+        private void Awake()
         {
-            this.words = new List<string>();
+            words = new List<string>();
         }
-        /// <summary>
-        /// If needed, include a summary of your function here in this nicely formatted XML docstring comment.
-        /// </summary>
-        /// <param name="words"></param>
-        public ExampleClass(params string[] words)
+        private void Start()
         {
-            this.words = words.ToList();
+            Debug.Log("I've started!");
         }
-        
+
         // public functions
         public void PrintWords()
         {
